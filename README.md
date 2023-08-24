@@ -14,3 +14,5 @@
 #define PIN_LM35       34 // ESP32 pin GPIO34 (ADC6) conectado al LM35
 
 #define BUTTON_PIN     13 // ESP32 pin GPIO13 conectado al botón
+
+volatile bool buttonPressed = false;
