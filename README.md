@@ -46,6 +46,7 @@ void setup() {
 void loop() {
 
   if (buttonPressed) {
+  
     // Lee el valor ADC del sensor 
     int adcVal = analogRead(PIN_LM35);
     // Convierte el valor ADC a milivoltios
