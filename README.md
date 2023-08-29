@@ -31,7 +31,7 @@ volatile float tempC;
 #define pinLedG 13
 #define pinLedY 12
 
-// Pines del servo
+// Pin del servo
 
 int servoPin = 3;
 
