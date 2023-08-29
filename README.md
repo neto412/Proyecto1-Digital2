@@ -1,7 +1,8 @@
+//Librerías
 #include <Arduino.h>
 #include "config.h"
 
-/************************ Example Starts Here *******************************/
+
 
 AdafruitIO_Feed *tempcanal = io.feed("Proyecto 1");
 
