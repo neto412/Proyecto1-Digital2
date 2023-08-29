@@ -1,0 +1,16 @@
+//CÓDIGO DEL CONFIG H PARA CONECTAR A ADAFRUIT.
+
+/************************ Adafruit IO Config *******************************/
+
+// visit io.adafruit.com if you need to create an account,
+// or if you need your Adafruit IO key.
+#define IO_USERNAME  "eschavez"
+#define IO_KEY       "aio_eTmW44SMoKHgQaWGDLL0IYh29Zon"
+/******************************* WIFI **************************************/
+
+#define WIFI_SSID "HONORX8"
+#define WIFI_PASS "neto12345"
+#include "AdafruitIO_WiFi.h"
+
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS); 
