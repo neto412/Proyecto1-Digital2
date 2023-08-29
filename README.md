@@ -132,6 +132,7 @@ void displayDigit(int digit, int display) {
 
 //SETUP
 
+//declaración de cada elemento como input/output
 void setup() {
   Serial.begin(9600);
   configurarPWM();
