@@ -3,6 +3,7 @@
 #include "config.h"
 
 
+//Canal de Adafruit al que se envían los datos de temperatura
 
 AdafruitIO_Feed *tempcanal = io.feed("Proyecto 1");
 
