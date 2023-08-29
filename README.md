@@ -41,7 +41,7 @@ int Ogrados = 500;
 int MedioGrados = 1200;
 int Fullgrados = 2000;
 
-// Definiciones para los segmentos
+// Definiciones para los segmentos y sus pines
 
 #define SEG_A 4
 #define SEG_B 5
@@ -53,7 +53,7 @@ int Fullgrados = 2000;
 #define SEG_H 0  
 
 
-// Definiciones para los transistores
+// Definiciones para los transistores y sus pines
 
 #define TRANS0 25
 #define TRANS1 26
