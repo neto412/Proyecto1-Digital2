@@ -14,7 +14,7 @@ AdafruitIO_Feed *tempcanal = io.feed("Proyecto 1");
 #define PIN_LM35 34 // ESP32 pin GPIO34 (ADC6) conectado al LM35
 volatile float tempC;
 
-// Configuración del PWM
+// Configuración del PWM de las leds y del servo
 
 #define pwmChannel 0
 #define ledRChannel 1
