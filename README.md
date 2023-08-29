@@ -1,3 +1,10 @@
+//Universidad del Valle de Guatemala
+//Electrónica digital 2
+//Sección 10
+//Ernesto Salvador Chavez González
+//Carné 21441
+
+
 //Librerías
 #include <Arduino.h>
 #include "config.h"
