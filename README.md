@@ -59,18 +59,22 @@ int Fullgrados = 2000;
 #define TRANS1 26
 #define TRANS2 27
 
-// Botón
+// Pin del botón
 #define BUTTON_PIN 33
-volatile bool readTemperature = true; // Leer la temperatura en la primera iteración
+
+
+volatile bool readTemperature = true; // Lee la temperatura en la primera iteración
 
 // Variables para almacenar la última temperatura
 int lastIntPart = 0;
 int lastDecPart = 0;
 
+//Interrupción para cambiar el valor de readTemperature para señalar que es necesario leer la temperatura.
 void IRAM_ATTR isr() {
   readTemperature = true;
 }
 
+//Configuración del PWM para el servo y para cada led.
 void configurarPWM() {
   ledcSetup(ledRChannel, freqPWM1, resolution);
   ledcSetup(ledGChannel, freqPWM2, resolution);
@@ -82,6 +86,7 @@ void configurarPWM() {
   ledcAttachPin(servoPin, pwmChannel);
 }
 
+//Configuración del display y de sus respectivos transistores y segmentos.
 void displayDigit(int digit, int display) {
   // Apagar todos los transistores
   digitalWrite(TRANS0, LOW);
@@ -91,7 +96,7 @@ void displayDigit(int digit, int display) {
   // Apagar el segmento H
   digitalWrite(SEG_H, HIGH); // Suponiendo que es un display de ánodo común
 
-  // Tabla de verdad para los segmentos
+  // Tabla de verdad para los segmentos que sirve para saber qué segmentos encender para mostrar un número específico en los displays. 
   int segmentos[10][7] = {
     {LOW, LOW, LOW, LOW, LOW, LOW, HIGH},
     {HIGH, LOW, LOW, HIGH, HIGH, HIGH, HIGH},
@@ -124,6 +129,8 @@ void displayDigit(int digit, int display) {
 
   delay(5);  // Este delay puede ajustarse para optimizar la velocidad de actualización
 }
+
+//SETUP
 
 void setup() {
   Serial.begin(9600);
