@@ -152,25 +152,27 @@ void setup() {
   Serial.println("Setup completo");
 }
 
+//LOOP PRINCIPAL
+
+
 void loop() {
-  if (readTemperature) 
+  if (readTemperature) //Detecta cuando el botón se presiona
   {
     int adcVal = analogRead(PIN_LM35);
     float milliVolt = adcVal * (ADC_VREF_mV / ADC_RESOLUTION);
-    float tempC = milliVolt / 5.0;
+    float tempC = milliVolt / 5.0; //convierte la señal ADC en valores de temperatura. 
     Serial.print("Temperatura: ");
     Serial.print(tempC, 1);
     Serial.println("°C");
-
     lastIntPart = (int)tempC;
-    lastDecPart = (int)((tempC - lastIntPart) * 10);
-    io.run();
+    lastDecPart = (int)((tempC - lastIntPart) * 10); 
+    io.run(); //Envía los datos al Adafruit
     Serial.print("enviando -->");
     Serial.println(tempC);
     tempcanal->save(tempC);
   
 
-    // Código para LEDs y servo
+  // Código para LEDs y servo según la temperatura registrada cuando el botón se presiona
     int servoPulseWidth;
     if (tempC < 37) {
       servoPulseWidth = Ogrados;
@@ -190,7 +192,6 @@ void loop() {
     }
     int dutyCycle = (servoPulseWidth * pow(2, resolution)) / 20000;
     ledcWrite(pwmChannel, dutyCycle);
-
     readTemperature = false;
   }
 
