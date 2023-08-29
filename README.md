@@ -35,7 +35,7 @@ volatile float tempC;
 
 int servoPin = 3;
 
-// Tiempos en microsegundos para las posiciones del servo
+// Tiempos en microsegundos para las posiciones del servo. Estos dan los movimientos según el ancho del pulso PWM.
 
 int Ogrados = 500;
 int MedioGrados = 1200;
