@@ -6,12 +6,14 @@
 AdafruitIO_Feed *tempcanal = io.feed("Proyecto 1");
 
 // Variables para el sensor LM35
+
 #define ADC_VREF_mV 3300.0 // en mV
 #define ADC_RESOLUTION 4096.0
 #define PIN_LM35 34 // ESP32 pin GPIO34 (ADC6) conectado al LM35
 volatile float tempC;
 
 // Configuración del PWM
+
 #define pwmChannel 0
 #define ledRChannel 1
 #define ledGChannel 2
@@ -22,19 +24,23 @@ volatile float tempC;
 #define resolution 16
 
 // Pines de los LEDs
+
 #define pinLedR 14
 #define pinLedG 13
 #define pinLedY 12
 
 // Pines del servo
+
 int servoPin = 3;
 
 // Tiempos en microsegundos para las posiciones del servo
+
 int Ogrados = 500;
 int MedioGrados = 1200;
 int Fullgrados = 2000;
 
 // Definiciones para los segmentos
+
 #define SEG_A 4
 #define SEG_B 5
 #define SEG_C 16
@@ -42,9 +48,11 @@ int Fullgrados = 2000;
 #define SEG_E 18
 #define SEG_F 19
 #define SEG_G 21
-#define SEG_H 0  // Añadido para el punto decimal
+#define SEG_H 0  
+
 
 // Definiciones para los transistores
+
 #define TRANS0 25
 #define TRANS1 26
 #define TRANS2 27
